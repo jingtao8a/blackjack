@@ -16,7 +16,7 @@ class GUIGame(Game):
         self.hand_score = 0
         self.canvas = tk.Canvas(self.root, width=600, height=400)
         self.canvas.pack()
-        self.carImages = dict();
+        self.carImages = dict()
         for rank in RANKS:
             for suit in SUITS:
                 self.carImages[rank + "_" + suit.lower()] = ImageTk.PhotoImage(Image.open("pukeImage/"+ rank + "_" + suit.lower() +".jpg"))
@@ -41,6 +41,7 @@ class GUIGame(Game):
         # 1. blackjack_phase()
         self.updatePlayerCardImage()
         self.blackjack_score = self.blackjack_phase()
+        self.hand_score = 0
         if self.player_hand.is_blackjack() or self.dealer_hand.is_blackjack():
             if self.blackjack_score + self.hand_score > 0:
                 print("Player wins", self.blackjack_score + self.hand_score, "unit(s).")
@@ -63,6 +64,7 @@ class GUIGame(Game):
 
 
     def play_hand_loop(self):
+        self.updatePlayerCardImage()
         if not (self.player_hand.is_stand or self.player_hand.is_double or self.player_hand.is_21() or self.player_hand.is_bust()):
             print("Current Player hand: ")
             self.player_hand.print()
