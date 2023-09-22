@@ -2,13 +2,11 @@ from card import Card
 
 
 class Hand:
-    cards_in_hand = []
-    is_stand = False
-    is_double = False
-    wager = 1
-
     def __init__(self):
         self.cards_in_hand = []
+        self.wager = 1
+        self.is_stand = False
+        self.is_double = False
 
     def add_card(self, card):
         self.cards_in_hand.append(card)

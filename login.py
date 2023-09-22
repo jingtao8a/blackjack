@@ -4,8 +4,8 @@ import tkinter.messagebox
 from BJ_leaderboard import show_leaderboard
 
 class Login:
-    username = ""
-    def __init__(self): 
+    def __init__(self):
+        self.username = ""
         self.root = tkinter.Tk()
         self.root.geometry("400x200")
         self.root.title("BlackJack")

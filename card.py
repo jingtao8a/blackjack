@@ -3,12 +3,6 @@ SUITS = ("Diamonds", "Hearts", "Spades", "Clubs")
 
 
 class Card:
-
-
-    rank = str()
-    suit = str()
-
-
     def __init__(self, value, suit):
         self.suit = suit
         self.rank = value

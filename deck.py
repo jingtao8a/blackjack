@@ -3,9 +3,8 @@ from card import Card, RANKS, SUITS
 
 
 class Deck:
-    cards = []
-
     def __init__(self):
+        self.cards = []
         for rank in RANKS:
             for suit in SUITS:
                 self.cards.append(Card(rank, suit))
